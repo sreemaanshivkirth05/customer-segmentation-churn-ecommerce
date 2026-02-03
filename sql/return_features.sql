@@ -1,4 +1,5 @@
 -- return_features.sql
+-- Return behavior before snapshot date
 
 DROP TABLE IF EXISTS return_features;
 
@@ -14,5 +15,6 @@ SELECT
         ELSE 0
     END AS has_returned
 FROM raw_transactions
-WHERE customer_id IS NOT NULL
+WHERE invoice_date < DATE '2011-06-01'
+  AND customer_id IS NOT NULL
 GROUP BY customer_id;

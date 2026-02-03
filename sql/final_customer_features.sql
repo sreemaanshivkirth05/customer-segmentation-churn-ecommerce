@@ -9,5 +9,3 @@ SELECT
 FROM extended_rfm e
 LEFT JOIN return_features r
     ON e.customer_id = r.customer_id;
-
-SELECT * FROM final_customer_features LIMIT 20;

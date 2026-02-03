@@ -1,4 +1,5 @@
 -- extended_rfm.sql
+-- Extended RFM features using snapshot date (2011-06-01)
 
 DROP TABLE IF EXISTS extended_rfm;
 
@@ -9,6 +10,7 @@ WITH customer_dates AS (
         MIN(invoice_date) AS first_purchase_date,
         MAX(invoice_date) AS last_purchase_date
     FROM clean_transactions
+    WHERE invoice_date < DATE '2011-06-01'
     GROUP BY customer_id
 ),
 purchase_gaps AS (
@@ -20,6 +22,7 @@ purchase_gaps AS (
             ORDER BY invoice_date
         ) AS previous_purchase_date
     FROM clean_transactions
+    WHERE invoice_date < DATE '2011-06-01'
 ),
 avg_gaps AS (
     SELECT
@@ -30,22 +33,30 @@ avg_gaps AS (
     FROM purchase_gaps
     WHERE previous_purchase_date IS NOT NULL
     GROUP BY customer_id
+),
+rfm_snapshot AS (
+    SELECT
+        customer_id,
+        COUNT(DISTINCT invoice) AS frequency,
+        SUM(quantity * price) AS monetary
+    FROM clean_transactions
+    WHERE invoice_date < DATE '2011-06-01'
+    GROUP BY customer_id
 )
 SELECT
     r.customer_id,
 
-    -- Classic RFM
     DATE_PART(
         'day',
-        DATE '2011-12-09' - r.last_purchase_date
+        DATE '2011-06-01' - d.last_purchase_date
     ) AS recency,
+
     r.frequency,
     r.monetary,
 
-    -- Extended Features
     DATE_PART(
         'day',
-        DATE '2011-12-09' - d.first_purchase_date
+        DATE '2011-06-01' - d.first_purchase_date
     ) AS tenure_days,
 
     r.monetary / NULLIF(r.frequency, 0) AS avg_order_value,
@@ -54,20 +65,18 @@ SELECT
 
     g.avg_days_between_purchases
 
-FROM rfm_base r
+FROM rfm_snapshot r
 JOIN customer_dates d
     ON r.customer_id = d.customer_id
 JOIN clean_transactions c
     ON r.customer_id = c.customer_id
+   AND c.invoice_date < DATE '2011-06-01'
 LEFT JOIN avg_gaps g
     ON r.customer_id = g.customer_id
 GROUP BY
     r.customer_id,
-    r.last_purchase_date,
+    d.last_purchase_date,
     r.frequency,
     r.monetary,
     d.first_purchase_date,
     g.avg_days_between_purchases;
-
-SELECT COUNT(*) FROM extended_rfm;
-SELECT * FROM extended_rfm LIMIT 5;
