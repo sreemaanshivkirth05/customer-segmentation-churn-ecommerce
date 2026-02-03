@@ -27,4 +27,4 @@ This project aims to answer:
 ---
 
 ## 🏗️ Project Structure
-
+C:\customer-segmentation-churn-ecommerce\images\Project Strucutre.png
