@@ -28,7 +28,7 @@ This project aims to answer:
 
 ## 🏗️ Project Structure
 
-<img src="images/project_structure.png" width="700">
+<img src="images/Project_Structure.png" width="700">
 
 
 
