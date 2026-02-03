@@ -28,7 +28,7 @@ This project aims to answer:
 
 ## 🏗️ Project Structure
 
-![Project Structure](images/Project_Structure.png)
+! [Project Structure](images/Project_Structure.png)
 
 
 
