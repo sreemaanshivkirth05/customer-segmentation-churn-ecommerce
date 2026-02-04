@@ -26,9 +26,9 @@ This project aims to answer:
 
 ---
 ## 🏗️ Project Structure
-
+```
 customer-segmentation-churn-ecommerce/
-├── data/
+├── data/ 
 │ ├── raw/
 │ └── processed/
 ├── sql/
@@ -45,7 +45,7 @@ customer-segmentation-churn-ecommerce/
 ├── images/
 ├── README.md
 └── .gitignore
-
+```
 ---
 
 ## 🔧 Feature Engineering (SQL)
