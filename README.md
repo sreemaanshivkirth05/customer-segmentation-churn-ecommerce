@@ -25,15 +25,9 @@ This project aims to answer:
 - **Key Fields:** Invoice date, quantity, price, customer ID, product, country
 
 ---
-
 ## 🏗️ Project Structure
 
-
-
-
-![Project Structure](images/Project_Structure.png)
-
-
+<img src="images/Project_Structure.png" width="700">
 
 ---
 
@@ -151,4 +145,4 @@ A Power BI dashboard can be built using the scored dataset to:
 ## 👤 Author
 **Sreemaan Shivkirth**  
 MS Computer Science (AI/ML) | Data Analyst
->>>>>>> 1eef0ea (Add project structure image to README)
+
