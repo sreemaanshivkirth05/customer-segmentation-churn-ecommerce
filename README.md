@@ -27,7 +27,24 @@ This project aims to answer:
 ---
 ## 🏗️ Project Structure
 
-<img src="images/Project_Structure.png" width="700">
+customer-segmentation-churn-ecommerce/
+├── data/
+│ ├── raw/
+│ └── processed/
+├── sql/
+│ ├── schema.sql
+│ ├── cleaning.sql
+│ ├── rfm_base.sql
+│ ├── extended_rfm.sql
+│ ├── return_features.sql
+│ ├── churn_label.sql
+│ └── final_customer_features.sql
+├── notebooks/
+│ ├── 01_data_validation.ipynb
+│ └── 02_churn_modeling.ipynb
+├── images/
+├── README.md
+└── .gitignore
 
 ---
 
