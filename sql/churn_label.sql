@@ -18,3 +18,11 @@ SELECT
     END AS churn_flag
 FROM final_customer_features f
 CROSS JOIN recency_threshold r;
+
+
+SELECT churn_flag, COUNT(*)
+FROM modeling_dataset
+GROUP BY churn_flag;
+
+SELECT *
+FROM modeling_dataset;
