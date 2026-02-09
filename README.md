@@ -1,6 +1,6 @@
 # 🛒 Customer Segmentation & Churn Prediction for E-commerce
 
-## 📌 Project Overview
+##  Project Overview
 
 This project implements a **full end-to-end data analytics and machine learning pipeline** to identify customers at risk of churn in an e-commerce business using **transaction-level purchase data**.
 
@@ -19,7 +19,7 @@ The objective is to transform **raw transactional data → customer intelligence
 
 ---
 
-## 💼 Business Problem
+##  Business Problem
 
 Customer churn directly impacts:
 
@@ -38,7 +38,7 @@ Instead of relying on intuition, this project builds a **data-driven churn predi
 
 ---
 
-## 📊 Dataset Description
+##  Dataset Description
 
 - **Source:** Online Retail transactional dataset  
 - **Records:** ~525,000 transactions  
@@ -57,7 +57,7 @@ Each row represents a **single product purchase within an invoice**.
 
 ---
 
-## 🏗️ Project Structure
+##  Project Structure
 ```
 customer-segmentation-churn-ecommerce/
 ├── data/ 
@@ -83,7 +83,7 @@ customer-segmentation-churn-ecommerce/
 
 ---
 
-## 🧹 Data Cleaning (SQL)
+##  Data Cleaning (SQL)
 
 Data cleaning is performed in **PostgreSQL** to simulate a real production analytics environment.
 
@@ -99,7 +99,7 @@ This ensures **all downstream features are computed on reliable data**.
 
 ---
 
-## 🛠️ Feature Engineering (SQL)
+##  Feature Engineering (SQL)
 
 All features are engineered in SQL for:
 
@@ -107,7 +107,7 @@ All features are engineered in SQL for:
 - Reproducibility
 - Real-world data engineering realism
 
-### 1️⃣ RFM Features
+### 1️. RFM Features
 
 For each customer:
 
@@ -127,7 +127,7 @@ These capture:
 
 ---
 
-### 2️⃣ Extended Behavioral Features
+### 2️. Extended Behavioral Features
 
 Beyond classic RFM, we compute:
 
@@ -151,7 +151,7 @@ These features capture:
 
 ---
 
-### 3️⃣ Return-Based Features
+### 3️. Return-Based Features
 
 Returns often signal **customer dissatisfaction or friction**.
 
@@ -165,7 +165,7 @@ These features add a **customer experience and risk dimension** to the model.
 
 ---
 
-## 🚨 Churn Label Definition
+##  Churn Label Definition
 
 Churn is defined using a **business-driven inactivity rule**:
 
@@ -176,7 +176,7 @@ This converts an **unsupervised behavioral problem** into a **supervised classif
 
 ---
 
-## 🧩 Final Modeling Dataset
+##  Final Modeling Dataset
 
 All engineered features are joined into a single **customer-level modeling table** containing:
 
@@ -189,7 +189,7 @@ This table represents **one row per customer** and is exported for modeling in P
 
 ---
 
-## 🤖 Modeling Approach (Python)
+##  Modeling Approach (Python)
 
 ### Models Used
 
@@ -204,7 +204,7 @@ This table represents **one row per customer** and is exported for modeling in P
 
 ---
 
-## 📈 Model Evaluation
+##  Model Evaluation
 
 Models are evaluated using:
 
@@ -216,7 +216,7 @@ The Random Forest achieves higher ROC-AUC, while Logistic Regression provides **
 
 ---
 
-## 🔍 Feature Importance & Interpretation
+##  Feature Importance & Interpretation
 
 Key insights:
 
@@ -227,7 +227,7 @@ Key insights:
 
 ---
 
-## 📊 Business Value
+##  Business Value
 
 This system enables the business to:
 
@@ -239,7 +239,7 @@ This system enables the business to:
 
 ---
 
-## 📊 Power BI Dashboard
+##  Power BI Dashboard
 
 The Power BI dashboard provides:
 
@@ -251,7 +251,7 @@ The Power BI dashboard provides:
 
 ---
 
-## 🚀 How to Run the Project (Step-by-Step)
+##  How to Run the Project (Step-by-Step)
 
 This project uses **PostgreSQL for feature engineering** and **Python for modeling**. Follow the steps below to reproduce the full pipeline from raw data to churn predictions.
 
@@ -333,7 +333,7 @@ data/processed/churn_scored_customers.csv
 
 ---
 
-## 🧠 Skills Demonstrated
+##  Skills Demonstrated
 
 - SQL data modeling and feature engineering
 - RFM and behavioral analytics
