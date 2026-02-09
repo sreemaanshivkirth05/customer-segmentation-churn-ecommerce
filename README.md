@@ -4,6 +4,8 @@
 
 This project implements a **full end-to-end data analytics and machine learning pipeline** to identify customers at risk of churn in an e-commerce business using **transaction-level purchase data**.
 
+The goal is not only to **understand which customer are at risk of churning**, but also to provide actionable insights to business teams through an **interactive Power BI dashboard** that highlights high-risk customers, shurn trends, and key behavioural analysis.
+
 The solution combines:
 
 - **SQL-based data cleaning and feature engineering**
@@ -15,24 +17,20 @@ The solution combines:
 - **Actionable customer risk scoring**
 - **Power BI dashboard for business users**
 
-The objective is to transform **raw transactional data → customer intelligence → churn risk predictions → business actions**.
+This project is designed to reflect a **real-world analytics workflow**, from a raw transactional data to executive-level and customer-level targeting.
 
 ---
 
 ##  Business Problem
 
-Customer churn directly impacts:
+CUstomer churn directly impacts **revenue, marketing efficiency, and long-term growth**. Retaining existing customers is ogten significantly cheaper than acquring new ones.
 
-- Revenue growth
-- Marketing efficiency
-- Customer lifetime value
-- Retention strategy effectiveness
-
-This project aims to answer:
+This project aims to answer the following business questions:
 
 - Which customers are **most likely to churn**?
 - What **behavioral signals** indicate churn risk?
 - How can the business **intervene early** to retain high-risk customers?
+- How can stakeholders monitor churn risk using a **single executive dashboard**?
 
 Instead of relying on intuition, this project builds a **data-driven churn prediction system**.
 
